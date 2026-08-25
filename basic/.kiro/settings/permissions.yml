@@ -1,0 +1,5 @@
+rules:
+  - capability: fs_write
+    effect: allow
+  - capability: str_replace
+    effect: allow
