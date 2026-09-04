@@ -1,0 +1,1 @@
+You have {components} components in your awesome project
