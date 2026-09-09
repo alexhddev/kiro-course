@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "airbnb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@openbnb/mcp-server-airbnb",
+        "--ignore-robots-txt"
+      ],
+      "disabled": false
+    },
+    "aws-mcp": {
+      "url": "https://aws-mcp.us-east-1.api.aws/mcp?oauth=initialize"
+    }
+  }
+}
