@@ -1,0 +1,11 @@
+﻿{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "greetings",
+  "version": "1.0.0",
+  "description": "A simple example power that will search for AirBnb listings based on the suggested location. Then it will also suggest greetings in the location language ",
+  "author": {
+    "name": "Kiro User"
+  },
+  "keywords": ["listings", "AirBnb"],
+  "license": "MIT"
+}
