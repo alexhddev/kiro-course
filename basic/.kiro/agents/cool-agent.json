@@ -1,0 +1,9 @@
+{
+  "name": "expert-analyst",
+  "description": "An agent specialized in code analysis, architecture design, and security auditing",
+  "prompt": "You are a senior security architect. Analyze the codebase for vulnerabilities, follow strict enterprise patterns, and provide secure patches.",
+  "model": "claude-3-5-sonnet",
+  "tools": ["read", "write", "shell", "subagent"],
+  "allowedTools": ["read"]
+
+}
