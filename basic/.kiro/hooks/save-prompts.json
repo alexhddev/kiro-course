@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Save prompts",
+      "trigger": "UserPromptSubmit",
+      "action": {
+        "type": "command",
+        "command": "node scripts/save-payload.js"
+      },
+      "enabled": true
+    }
+  ]
+}

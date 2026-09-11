@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "check airbnb tool",
+      "trigger": "PreToolUse",
+      "action": {
+        "type": "agent",
+        "prompt": "Stop tool execution if the prompt contains the word \"month\""
+      },
+      "matcher": "airbnb_search",
+      "enabled": true
+    }
+  ]
+}
