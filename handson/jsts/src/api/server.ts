@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import { order } from '../model/Model';
-import { dailyMenu, findOrderById, addOrder, updateOrderById } from './database';
+import { dailyMenu, findOrderById, addOrder, updateOrderById, deleteOrderById } from './database';
 
 // Token payload: base64({"role":"admin"})
 // To generate: Buffer.from(JSON.stringify({ role: 'admin' })).toString('base64')
@@ -266,6 +266,54 @@ app.put('/api/orders/:id', (req, res) => {
             success: false,
             error: 'Internal server error',
             message: 'Failed to update order'
+        });
+    }
+});
+
+// DELETE /api/orders/:id - Delete an order
+app.delete('/api/orders/:id', (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if (!id) {
+            return res.status(400).json({
+                success: false,
+                error: 'Bad request',
+                message: 'Order ID is required'
+            });
+        }
+
+        // Check if order exists
+        const existingOrder = findOrderById(id);
+        if (!existingOrder) {
+            return res.status(404).json({
+                success: false,
+                error: 'Not found',
+                message: `Order with ID '${id}' not found`
+            });
+        }
+
+        // Delete the order
+        const deleted = deleteOrderById(id);
+
+        if (!deleted) {
+            return res.status(500).json({
+                success: false,
+                error: 'Internal server error',
+                message: 'Failed to delete order'
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            data: null,
+            message: 'Order deleted successfully'
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: 'Internal server error',
+            message: 'Failed to delete order'
         });
     }
 });
