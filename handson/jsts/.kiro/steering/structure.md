@@ -25,3 +25,10 @@
 - Add new endpoints in `server.ts`, delegate data operations to helpers in `database.ts`, and reference types from `Model.ts`.
 - When adding or changing an endpoint, update `docs/openapi.yaml` to match.
 - Keep the layering intact: HTTP concerns in `api/`, domain types in `model/`. Avoid mixing data access into route handlers beyond calling the provided helpers.
+
+# Spec Generation Rules
+- Keep all specification files minimal and concise.
+- Avoid over-engineering: do not suggest complex architectures (like hexagonal or microservices) unless explicitly requested.
+- In requirements.md, limit acceptance criteria to the absolute core functionality.
+- In design.md, focus only on immediate code changes. Skip high-level diagrams or extensive boilerplate explanations unless necessary. Skip testing plans
+- In tasks.md, keep implementation steps straightforward and grouped logically.
