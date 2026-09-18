@@ -1,7 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import { order } from '../model/Model';
-import { dailyMenu, findOrderById, addOrder, updateOrderById, deleteOrderById } from './database';
+import { getDailyMenu, findOrderById, addOrder, updateOrderById, deleteOrderById } from './database';
+import { initSchema, seedIfEmpty } from './db/pool';
 
 // Token payload: base64({"role":"admin"})
 // To generate: Buffer.from(JSON.stringify({ role: 'admin' })).toString('base64')
@@ -48,11 +49,11 @@ app.use((req, res, next) => {
 // API Routes
 
 // GET /api/daily-menu - Return the daily menu
-app.get('/api/daily-menu', (req, res) => {
+app.get('/api/daily-menu', async (req, res) => {
     try {
         res.status(200).json({
             success: true,
-            data: dailyMenu,
+            data: await getDailyMenu(),
             message: 'Daily menu retrieved successfully'
         });
     } catch (error) {
@@ -65,7 +66,7 @@ app.get('/api/daily-menu', (req, res) => {
 });
 
 // GET /api/orders/:id - Get order by ID
-app.get('/api/orders/:id', (req, res) => {
+app.get('/api/orders/:id', async (req, res) => {
     try {
         const { id } = req.params;
         
@@ -77,7 +78,7 @@ app.get('/api/orders/:id', (req, res) => {
             });
         }
 
-        const order = findOrderById(id);
+        const order = await findOrderById(id);
         
         if (!order) {
             return res.status(404).json({
@@ -102,7 +103,7 @@ app.get('/api/orders/:id', (req, res) => {
 });
 
 // POST /api/orders - Create a new order
-app.post('/api/orders', (req, res) => {
+app.post('/api/orders', async (req, res) => {
     try {
         const { sender, contents } = req.body;
 
@@ -149,7 +150,7 @@ app.post('/api/orders', (req, res) => {
             contents: contents
         };
 
-        const newOrder = addOrder(orderData);
+        const newOrder = await addOrder(orderData);
 
         res.status(201).json({
             success: true,
@@ -166,7 +167,7 @@ app.post('/api/orders', (req, res) => {
 });
 
 // PUT /api/orders/:id - Update an existing order
-app.put('/api/orders/:id', (req, res) => {
+app.put('/api/orders/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const { sender, status, contents } = req.body;
@@ -180,7 +181,7 @@ app.put('/api/orders/:id', (req, res) => {
         }
 
         // Check if order exists
-        const existingOrder = findOrderById(id);
+        const existingOrder = await findOrderById(id);
         if (!existingOrder) {
             return res.status(404).json({
                 success: false,
@@ -246,7 +247,7 @@ app.put('/api/orders/:id', (req, res) => {
         }
 
         // Update the order
-        const updatedOrder = updateOrderById(id, updateData);
+        const updatedOrder = await updateOrderById(id, updateData);
 
         if (!updatedOrder) {
             return res.status(500).json({
@@ -271,7 +272,7 @@ app.put('/api/orders/:id', (req, res) => {
 });
 
 // DELETE /api/orders/:id - Delete an order
-app.delete('/api/orders/:id', (req, res) => {
+app.delete('/api/orders/:id', async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -284,7 +285,7 @@ app.delete('/api/orders/:id', (req, res) => {
         }
 
         // Check if order exists
-        const existingOrder = findOrderById(id);
+        const existingOrder = await findOrderById(id);
         if (!existingOrder) {
             return res.status(404).json({
                 success: false,
@@ -294,7 +295,7 @@ app.delete('/api/orders/:id', (req, res) => {
         }
 
         // Delete the order
-        const deleted = deleteOrderById(id);
+        const deleted = await deleteOrderById(id);
 
         if (!deleted) {
             return res.status(500).json({
@@ -369,9 +370,23 @@ app.get('/api/admin', (req, res) => {
     }
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`🍕 Awesome Pizza API server running on port ${PORT}`);
-});
+// Bootstrap the database, then start the server. If the database is
+// unavailable or schema/seed setup fails, log the error and exit without
+// serving requests (Requirements 1.3–1.4).
+async function bootstrap(): Promise<void> {
+    try {
+        await initSchema();
+        await seedIfEmpty();
+    } catch (error) {
+        console.error('❌ Failed to initialize the database. Server will not start.', error);
+        process.exit(1);
+    }
+
+    app.listen(PORT, () => {
+        console.log(`🍕 Awesome Pizza API server running on port ${PORT}`);
+    });
+}
+
+bootstrap();
 
 export default app;

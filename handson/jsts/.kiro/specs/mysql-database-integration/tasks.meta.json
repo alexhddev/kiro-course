@@ -1,0 +1,288 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Add `mysql2` dependency": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712382678
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712390370
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712448247
+      }
+    ],
+    "2.1 Create env-configured `mysql2` pool": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712382810
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712394910
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712451724
+      }
+    ],
+    "2.2 Implement `initSchema()`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712382894
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712455154
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712526458
+      }
+    ],
+    "2.3 Implement idempotent `seedIfEmpty()`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712382959
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712530890
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712617325
+      }
+    ],
+    "3. Checkpoint - verify pool and bootstrap compile": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383038
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712640428
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712719941
+      }
+    ],
+    "4.1 Replace `dailyMenu` array with async `getDailyMenu()`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383103
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712729650
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712837431
+      }
+    ],
+    "4.2 Keep `generateOrderId()` synchronous": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383165
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712841794
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712876043
+      }
+    ],
+    "4.3 Implement async `findOrderById(id)`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383236
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712879430
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712950710
+      }
+    ],
+    "4.4 Implement async `addOrder(orderData)`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383294
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712954062
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713019348
+      }
+    ],
+    "4.5 Implement async `updateOrderById(id, updatedOrder)`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383361
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713022733
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713123221
+      }
+    ],
+    "4.6 Implement async `deleteOrderById(id)`": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383423
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713126464
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713218442
+      }
+    ],
+    "5. Checkpoint - verify data layer compiles": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383507
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713222306
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713279138
+      }
+    ],
+    "6.1 Update imports and await helper calls": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383593
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713284350
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713347754
+      }
+    ],
+    "6.2 Add database startup bootstrap": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383679
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713351024
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713392634
+      }
+    ],
+    "7. Final checkpoint - Ensure the project compiles and starts against a local MySQL": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712383834
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713396580
+      },
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713468383
+      }
+    ],
+    "1. Add dependency and connection pool": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712448329
+      }
+    ],
+    "2. Create the connection pool and bootstrap module (`src/api/db/pool.ts`)": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789712617411
+      }
+    ],
+    "4. Rewrite the data layer (`src/api/database.ts`)": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713218528
+      }
+    ],
+    "6. Wire the server (`src/api/server.ts`)": [
+      {
+        "executionId": "d7cda86c-bd9e-47da-b53f-4ab40e1d16da",
+        "chatSessionId": "sess_06e02062-6cb8-405e-a5f9-5f88b85e39db",
+        "timestamp": 1789713392718
+      }
+    ]
+  }
+}
