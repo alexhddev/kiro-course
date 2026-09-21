@@ -2,7 +2,7 @@
   "name": "awesome-pizza-jsts",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsx src/api/server.ts"
+    "start": "tsx --env-file=.env src/api/server.ts"
   },
   "repository": {
     "type": "git",
