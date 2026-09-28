@@ -5,7 +5,7 @@ description: Audit the Awesome Pizza repository for contradictions and drift bet
 
 # Repository coherence audit
 
-Audit read-only by default. Report evidence before proposing or applying fixes, and distinguish confirmed contradictions from unverified assumptions.
+Audit repository inputs read-only by default; the sole required write is the report artifact. Every completed audit must write or replace workspace-root `coherence-audit.md` with the full findings. Report evidence before proposing or applying fixes, and distinguish confirmed contradictions from unverified assumptions.
 
 ## Workflow
 
